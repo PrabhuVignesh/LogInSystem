@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LoginSystem</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<%= render 'layouts/header' %>
+<div id="main-container" class="container-fluid">
+  <%= flash_messages %>
+  <div class="row">
+    <div id="main-content" class="col-xs-12">
+      <%= yield  %>
+
+    </div>
+  </div>
+</div>
+
+<%= render 'layouts/developer_console' if Rails.env.development?%>
+<%= render 'layouts/footer' %>
+</body>
+</html>
